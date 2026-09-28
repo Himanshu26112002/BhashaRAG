@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BhashaRAG</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <header class="brand">
+        <div class="logo">भा</div>
+        <div>
+          <h1>BhashaRAG</h1>
+          <p class="muted">Hindi + English document Q&amp;A</p>
+        </div>
+      </header>
+
+      <div id="stats" class="stats muted">Loading…</div>
+
+      <label id="dropzone" class="dropzone" tabindex="0">
+        <input id="file-input" type="file" multiple accept=".pdf,.docx,.txt,.md" hidden>
+        <strong>Upload documents</strong>
+        <span class="muted">Drop PDF, DOCX, TXT or MD files here, or click to browse</span>
+      </label>
+      <ul id="upload-status" class="upload-status"></ul>
+
+      <div class="docs-header">
+        <h2>Knowledge base</h2>
+        <button id="select-all" class="link-btn" type="button">Select all</button>
+      </div>
+      <p class="muted small">Tick documents to limit answers to them. None ticked = search everything.</p>
+      <ul id="doc-list" class="doc-list"></ul>
+    </aside>
+
+    <main class="chat">
+      <div id="messages" class="messages">
+        <div id="empty-state" class="empty-state">
+          <h2>Ask anything about your documents</h2>
+          <p class="muted">Ask in English, हिंदी or Hinglish. You get answers with citations, even when the document is in a different language from your question.</p>
+          <div class="examples">
+            <button type="button" class="example">Summarise the key points of my documents</button>
+            <button type="button" class="example">इस दस्तावेज़ में पात्रता की शर्तें क्या हैं?</button>
+            <button type="button" class="example">Isme apply kaise karna hai?</button>
+          </div>
+        </div>
+      </div>
+
+      <form id="chat-form" class="composer">
+        <div id="scope" class="scope muted small">Searching all documents</div>
+        <div class="composer-row">
+          <textarea id="question" rows="1" placeholder="Ask a question… / अपना सवाल पूछें…" required></textarea>
+          <button id="send" type="submit">Send</button>
+        </div>
+        <div class="composer-foot muted small">
+          <button id="clear-chat" class="link-btn" type="button">New conversation</button>
+          <span>Enter to send · Shift+Enter for a new line</span>
+        </div>
+      </form>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

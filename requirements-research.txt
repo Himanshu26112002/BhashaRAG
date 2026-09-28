@@ -1,0 +1,5 @@
+-r requirements.txt
+datasets>=2.19
+accelerate>=0.30
+sentencepiece>=0.2
+transformers>=4.41
